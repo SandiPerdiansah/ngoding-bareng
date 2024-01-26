@@ -1,0 +1,102 @@
+body {
+   font-family: 'Poppins', sans-serif;
+   overflow-x: hidden;
+}
+
+.navbar {
+   transition: all 0.3s ease;
+}
+
+.navbar.scroll-active {
+   background-color: #0d6efd;
+   padding: 0.8rem 0;
+}
+
+.navbar-extra img {
+   transition: 0.3s ease;
+}
+
+.navbar-extra img:hover {
+   cursor: pointer;
+   filter: drop-shadow(3px 3px #0d6efd);
+}
+
+.navbar .navbar-toggler {
+   border: none;
+}
+
+.navbar .navbar-toggler:focus {
+   box-shadow: none;
+}
+
+.hero {
+   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/img/hero.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-width: 100%;
+   min-height: 100vh;
+}
+
+.about .row .col:nth-child(1) {
+   background-color: #222;
+}
+
+.projects-card {
+   cursor: pointer;
+   display: inline-block;
+   vertical-align: middle;
+   -webkit-transform: perspective(1px) translateZ(0);
+   transform: perspective(1px) translateZ(0);
+   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+   -webkit-transition-duration: 0.3s;
+   transition-duration: 0.3s;
+   -webkit-transition-property: box-shadow;
+   transition-property: box-shadow;
+}
+
+.projects-card:hover,
+.projects-card:focus,
+.projects-card:active {
+   box-shadow: 0 0 8px rgba(32, 152, 209, 0.8);
+}
+
+.projects-card img {
+   height: 20rem;
+}
+
+.services .services-img {
+   width: 20rem;
+   height: 35rem;
+}
+
+.faq .accordion .accordion-button:focus {
+   box-shadow: none;
+}
+
+footer {
+   min-height: 20rem;
+}
+
+footer a {
+   color: #fff;
+   text-decoration: none;
+   opacity: 0.5;
+}
+
+footer a:hover {
+   color: #0d6efd;
+}
+
+/* Animation */
+
+/* media queries */
+@media screen and (max-width: 576px) {
+   .services .col:nth-child(0) {
+      display: none;
+   }
+
+   footer p {
+      font-size: 0.6rem;
+   }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Real Estate</title>
+      <link rel="shortcut icon" href="./assets/icon/favicon.png" type="image/x-icon" />
+
+      <!-- boostsrap -->
+      <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="dist/css/style.css" />
+      <link rel="stylesheet" href="dist/css/font.css" />
+
+      <!-- Animate.css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+      <!-- Animate on scroll -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+      <!-- Alpine.js -->
+      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+      <!-- jquery -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+         <div class="container">
+            <a class="navbar-brand fw-bold fs-5" href="#home">Real Estate.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+               <div class="navbar-nav mx-auto d-flex gap-2">
+                  <a class="nav-link" aria-current="page" href="#home">HOME</a>
+                  <a class="nav-link" href="#about">ABOUT US</a>
+                  <a class="nav-link" href="#projects">PROJECTS</a>
+                  <a class="nav-link" href="#services">SERVICES</a>
+                  <a class="nav-link" href="#faq">FAQ</a>
+               </div>
+               <div class="navbar-extra">
+                  <a><img class="me-2" src="./assets/icon/linkedin.svg" alt="linkedin" /></a>
+                  <a><img src="./assets/icon/facebook.svg" alt="facebook" /></a>
+               </div>
+            </div>
+         </div>
+      </nav>
+
+      <!-- hero sections -->
+      <section class="hero d-flex align-items-center" id="home">
+         <div class="container">
+            <div class="row">
+               <div class="col text-center">
+                  <h1 class="fw-bold text-white fs-1 hero-title">Join Bersama Kami <br />Membangun Sebuah Projects Bangunan</h1>
+                  <p class="text-white text-opacity-75 mb-5 hero-dec">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, aspernatur?</p>
+                  <button class="btn btn-primary rounded-1 me-2 btn-lg btn-join">Join With Us</button>
+                  <a href="#about"><button class="btn btn-outline-light rounded-1 btn-lg btn-about">About Us</button></a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- about sections -->
+      <section class="about" id="about">
+         <div class="container-fluid text-white">
+            <di class="row row-cols-1 row-cols-md-2 text-center">
+               <div class="col py-5 about-left" data-aos="zoom-in">
+                  <h3 class="fw-bold">400+ <br />Projects Selesai</h3>
+                  <p class="w-50 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, fugit.</p>
+               </div>
+               <div class="col bg-primary py-5 about-right" data-aos="zoom-in">
+                  <h3 class="fw-bold">250+ <br />Perusahaan Bekerjasama</h3>
+                  <p class="w-50 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, laboriosam?</p>
+               </div>
+            </di>
+         </div>
+      </section>
+
+      <!-- projects sections -->
+      <section class="projects mt-5" id="projects" x-data="projects">
+         <div class="container p-4 p-sm-0">
+            <h2 class="fw-bold fs-3" data-aos="fade-up">Detail Projects <br />Yang Telah di Selesaikan</h2>
+            <hr class="border-bottom border-secondary" data-aos="fade-up" />
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+               <template x-for="(item) in items">
+                  <div class="col mb-4">
+                     <div class="card projects-card" data-aos="zoom-in">
+                        <img :src="`assets/img/projects/${item.img}`" class="card-img-top" :alt="item.title" />
+                        <div class="card-body">
+                           <h5 class="card-title fw-bold" x-text="item.title"></h5>
+                           <p class="card-text text-secondary" x-text="item.descript">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                     </div>
+                  </div>
+               </template>
+            </div>
+         </div>
+      </section>
+
+      <!-- services sections -->
+      <section class="services mt-5" id="services">
+         <div class="container p-4 p-sm-0">
+            <h2 class="fw-bold fs-3" data-aos="fade-up">Detail Pelayanan <br />Yang Kami Berikan</h2>
+            <hr class="border-bottom border-secondary" data-aos="fade-up" />
+            <div class="row row-cols-1 row-cols-sm-2">
+               <div class="col d-lg-block d-none mb-3">
+                  <img class="services-img" src="assets/img/services/services-1.jpg" alt="services-1" data-aos="fade-up" />
+                  <img class="services-img" src="assets/img/services/services-2.jpg" alt="services-2" data-aos="fade-up" />
+               </div>
+               <div class="col d-flex flex-column justify-content-center gap-sm-3" x-data="services">
+                  <template x-for="(item) in items">
+                     <div class="d-flex align-items-center" data-aos="zoom-in">
+                        <img src="./assets/icon/check-circle.svg" alt="check" />
+                        <h5 class="mt-2 ms-2" x-text="item.service"></h5>
+                     </div>
+                  </template>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- FAQ sections -->
+      <section class="faq mt-5" id="faq" x-data="faq">
+         <div class="container p-4 p-sm-0">
+            <h2 class="fw-bold fs-3" data-aos="fade-up">Pertanyaan <br />Yang Biasa di Tanyakan</h2>
+            <hr class="border-bottom border-secondary" data-aos="fade-up" />
+            <div class="row row-cols-1 row-cols-sm-2">
+               <template x-for="(item) in items">
+                  <div class="accordion" id="accordionPanelsStayOpenExample">
+                     <div class="col mb-2">
+                        <div class="accordion-item" data-aos="zoom-in">
+                           <h2 class="accordion-header">
+                              <button
+                                 class="accordion-button collapsed"
+                                 type="button"
+                                 data-bs-toggle="collapse"
+                                 :data-bs-target="`#panelsStayOpen-${item.collapse}`"
+                                 aria-expanded="false"
+                                 :aria-controls="`panelsStayOpen-${item.collapse}`"
+                                 x-text="item.quest"
+                              ></button>
+                           </h2>
+                           <div :id="`panelsStayOpen-${item.collapse}`" class="accordion-collapse collapse">
+                              <div class="accordion-body" x-text="item.answer"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </template>
+            </div>
+         </div>
+      </section>
+
+      <!-- footer -->
+      <footer class="mt-5 bg-dark text-white d-flex align-items-center">
+         <div class="container p-5 p-sm-0 mt-5">
+            <div class="row row-cols-1 row-cols-sm-3">
+               <div class="col col-sm-6">
+                  <h5 class="fw-bold fs-3 mb-sm-4">Real Estate.</h5>
+                  <p class="opacity-50">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet enim aspernatur non ipsum quaerat corrupti distinctio fugiat! Eos asperiores laboriosam, soluta repudiandae labore ducimus reprehenderit amet accusantium
+                     veniam! Excepturi, est!
+                  </p>
+               </div>
+               <div class="col col-sm-2 d-flex flex-column mb-3 mb-sm-0">
+                  <h5 class="fw-bold fs-5 mb-sm-4">Menu</h5>
+                  <a href="#home">Home</a>
+                  <a href="#about">About</a>
+                  <a href="#projects">Projects</a>
+                  <a href="#services">Services</a>
+                  <a href="#faq">FAQ</a>
+               </div>
+               <div class="col d-flex flex-column">
+                  <h5 class="fw-bold fs-5 mb-sm-4">Contact</h5>
+                  <a href="">realestate@gmail.com</a>
+                  <a href="">+62 8657 8976 345</a>
+                  <a href="">@realestateID (Telegram)</a>
+               </div>
+            </div>
+            <div class="row text-center text-sm-start pt-5">
+               <div class="col">
+                  <p class="opacity-50">Created By <a href="https://github.com/SandiPerdiansah" class="text-warning">Sandi Perdiansah</a> || &copy; 15 Desember 2023</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <!-- script.js -->
+      <script src="dist/js/bootstrap.bundle.min.js"></script>
+      <script src="dist/app/script.js"></script>
+      <script src="dist/app/app.js"></script>
+
+      <!-- script Animate on scroll -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+   </body>
+</html>
